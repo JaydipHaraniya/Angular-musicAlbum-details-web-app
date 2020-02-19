@@ -1,0 +1,22 @@
+<div class="container-fluid header-section">
+  <div class="row bg">
+    <img src="https://png.icons8.com/color/50/000000/home.png" routerLink="" title="Go to Home Page" style="cursor: pointer; margin: 0 0 0 71px">
+    <h1 style="margin:21px 0px 0px 22%; ">Music Albums of {{atristName}}</h1>
+  </div>
+</div>
+
+<div class="container" *ngIf="artistData">
+  <div class="row">
+    <div class="col-md-12" style="margin-top: 12%;">
+      <div class="col-4" style="display: inline-block" *ngFor="let data of artistData">
+        <div class="card" style="width: 18rem;background-color: antiquewhite;margin-bottom: 15px; border-color: black">
+          <img class="card-img-top" src="{{data.image[3 ]['#text']}}" alt="image is loading....">
+          <div class="card-body">
+            <h5 class="card-title">ArtistName</h5>{{data.artist}}
+            <h5 class="card-title">SongName</h5><b>{{data.name}}</b>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="container-fluid header-section">
+  <div class="row bg">
+    <img src="assets/musicicone.jpg" height="100" width="100" style="cursor: pointer" title="search Music ">
+    <div class="col-md-4">
+      <form class="example-form" style="margin: 41px 0px 0px 179%;">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="search Your Favorite Music Here... " #myinput (keyup)="searchMusic(myinput.value)">
+        </mat-form-field>
+      </form>
+    </div>
+  </div>
+  <img src="assets/trnding.png" *ngIf="image == true" title="Search Your Favorite Music in search Area" style="margin-top: 9%;">
+</div>
+
+<div class="container"  *ngIf="musicData">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="col-4" style="display: inline-block" *ngFor="let data of musicData">
+        <div class="card" style="width: 18rem;background-color: antiquewhite;margin-bottom: 15px; border-color: black;" >
+          <img class="card-img-top" src="{{data.image[3 ]['#text']}}" alt="image is loading....">
+          <div class="card-body">
+            <h5 class="card-title">Artist Name:</h5> <a routerLink="{{data.artist.trim()}}" title="Goto the artist page" class="card-link">{{data.artist}}</a>
+            <h5 class="card-title">Song Name:</h5><b>{{data.name}}</b>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
